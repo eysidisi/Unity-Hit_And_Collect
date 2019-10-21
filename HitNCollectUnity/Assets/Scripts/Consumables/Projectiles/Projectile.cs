@@ -7,5 +7,5 @@ public abstract class Projectile
 
     public abstract float Damage { get; }
     public abstract float Speed { get; }
-    public abstract Color ProjectileColor { get; }
+    public  abstract Color ProjectileColor { get; }
 }

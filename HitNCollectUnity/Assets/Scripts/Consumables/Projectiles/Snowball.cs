@@ -7,5 +7,5 @@ public class Snowball : Projectile
 
     public override float Speed => 10;
 
-    public override Color ProjectileColor => Color.white;
+    public override Color ProjectileColor => Color.blue;
 }

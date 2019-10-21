@@ -28,7 +28,7 @@ public class AIManager : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            fireManager.Fire(Vector3.one, ProjectileType.Snowball);
+            movementManager.SetTargetPos(Vector3.zero);
         }
     }
 

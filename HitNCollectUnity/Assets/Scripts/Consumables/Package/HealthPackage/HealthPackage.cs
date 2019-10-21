@@ -6,12 +6,12 @@ public class HealthPackage : Package
 {
     public override int Amount => amount;
 
-    public override PackageType typeOfPackage => PackageType.Health;
+    public override PackageType TypeOfPackage => PackageType.Health;
+
 
     protected override void Oncollected(StatusManager statusManager)
     {
         base.Oncollected(statusManager);
-
     }
 
 }

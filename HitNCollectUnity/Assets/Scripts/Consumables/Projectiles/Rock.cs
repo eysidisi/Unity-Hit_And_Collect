@@ -7,5 +7,5 @@ public class Rock : Projectile
 
     public override float Speed => 10;
 
-    public override Color ProjectileColor => Color.grey;
+     public override Color ProjectileColor => Color.grey;
 }

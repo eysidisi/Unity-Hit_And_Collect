@@ -21,7 +21,7 @@ public class StatusManager : MonoBehaviour, IDamageable
 
     public void HandlePackage(Package package)
     {
-        switch (package.typeOfPackage)
+        switch (package.TypeOfPackage)
         {
             // If package contains ammo
             case PackageType.Ammo:
@@ -29,16 +29,16 @@ public class StatusManager : MonoBehaviour, IDamageable
 
                 int packageAmmoVal;
 
-                if (!ammoList.TryGetValue(ammoPackage.AmmoType, out packageAmmoVal))
+                if (!ammoList.TryGetValue(ammoPackage.CurrentAmmoType, out packageAmmoVal))
                 {
                     packageAmmoVal = ammoPackage.Amount;
-                    ammoList.Add(ammoPackage.AmmoType, packageAmmoVal);
+                    ammoList.Add(ammoPackage.CurrentAmmoType, packageAmmoVal);
                 }
 
                 else
                 {
                     packageAmmoVal = ammoPackage.Amount;
-                    ammoList[ammoPackage.AmmoType] += packageAmmoVal;
+                    ammoList[ammoPackage.CurrentAmmoType] += packageAmmoVal;
                 }
                 break;
 

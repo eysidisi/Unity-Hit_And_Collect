@@ -13,20 +13,33 @@ public abstract class Package : MonoBehaviour
 {
     protected virtual void Oncollected(StatusManager statusManager)
     {
-        Debug.Log(typeOfPackage + " is picked up");
         statusManager.HandlePackage(this);
     }
+    // declare delegate 
+    public delegate void PackageIsPicked(Package package);
+
+    //declare event of type delegate
+    public event PackageIsPicked packageIsPickedEvent;
 
     [SerializeField]
     protected int amount;
     public abstract int Amount { get; }
-    public abstract PackageType typeOfPackage { get; }
+    public abstract PackageType TypeOfPackage { get; }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider triggeredObject)
     {
-        if (other.tag == "Character")
+        if (triggeredObject.tag == "Character")
         {
-            Oncollected(other.GetComponent<StatusManager>());
+            Oncollected(triggeredObject.GetComponent<StatusManager>());
+
+            // Manager needs to learn about picking event first
+            GameAreaManager.PackageIsPicked(this);
+
+            //TODO: Learn about events and use it properly
+            if (packageIsPickedEvent != null)
+            {
+                packageIsPickedEvent(this);
+            }
         }
     }
 }

@@ -9,22 +9,37 @@ public enum AmmoType
 }
 public class AmmoPackage : Package
 {
-    [SerializeField]
-    private AmmoType ammoType;
-    public AmmoType AmmoType
+    private AmmoType ammoType = AmmoType.Rock;
+    public AmmoType CurrentAmmoType
     {
         get
         {
             return ammoType;
         }
+
+        set
+        {
+            ammoType = value;
+
+            switch (ammoType)
+            {
+                case AmmoType.Snowball:
+                    GetComponent<MeshRenderer>().material.color = Color.blue;
+                    break;
+
+                case AmmoType.Rock:
+                    GetComponent<MeshRenderer>().material.color = Color.grey;
+                    break;
+                default:
+                    break;
+            }
+        }
     }
     public override int Amount => amount;
-    public override PackageType typeOfPackage => PackageType.Ammo;
-
+    public override PackageType TypeOfPackage => PackageType.Ammo;
     protected override void Oncollected(StatusManager statusManager)
     {
         base.Oncollected(statusManager);
-        Debug.Log(ammoType + " ammo is collected");
     }
 
 }
