@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AIManager : MonoBehaviour
+public class Character : MonoBehaviour
 {
-    // TODO: Implement a method to get unique IDs for each AI
+    // TODO: Implement a method to get unique IDs for each Character
 
-    int aIId;
-    public int AIId { get { return aIId; } }
+    int characterID;
+    public int CharacterID { get { return characterID; } }
     EnvironmentInfoManager environmentInfoManager;
     FireManager fireManager;
     MovementManager movementManager;
     StatusManager statusManager;
     private void Awake()
     {
-        aIId = Random.Range(int.MinValue, int.MaxValue);
+        characterID = Random.Range(int.MinValue, int.MaxValue);
     }
     // Start is called before the first frame update
     void Start()

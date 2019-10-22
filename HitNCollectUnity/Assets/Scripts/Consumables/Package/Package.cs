@@ -33,7 +33,7 @@ public abstract class Package : MonoBehaviour
             Oncollected(triggeredObject.GetComponent<StatusManager>());
 
             // Manager needs to learn about picking event first
-            GameAreaManager.PackageIsPicked(this);
+            GameAreaController.PackageIsPicked(this);
 
             //TODO: Learn about events and use it properly
             if (packageIsPickedEvent != null)

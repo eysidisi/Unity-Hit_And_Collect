@@ -42,9 +42,9 @@ public class ProjectileManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider collidedObject)
     {
-        if (collidedObject.GetComponent<AIManager>())
+        if (collidedObject.GetComponent<Character>())
         {
-            if (collidedObject.GetComponent<AIManager>().AIId == id)
+            if (collidedObject.GetComponent<Character>().CharacterID == id)
             {
                 return;
             }

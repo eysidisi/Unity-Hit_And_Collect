@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameAreaManager : MonoBehaviour
+public class GameAreaController : MonoBehaviour
 {
 
     [SerializeField]

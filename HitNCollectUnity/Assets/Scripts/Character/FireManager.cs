@@ -15,6 +15,6 @@ public class FireManager : MonoBehaviour
     {
         GameObject newProjectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
         newProjectile.GetComponent<ProjectileManager>()
-            .Init(projectileType, GetComponent<AIManager>().AIId, direction);
+            .Init(projectileType, GetComponent<Character>().CharacterID, direction);
     }
 }
