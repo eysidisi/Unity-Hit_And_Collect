@@ -320,16 +320,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1652721859}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f7cfbc24d2d37080952fe331cfa0c62, type: 3}
+  m_Script: {fileID: 11500000, guid: e3ad6778a7c3edb15a8eed8ddf9f49bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ammoPackagePrefab: {fileID: 7513542577770567935, guid: 189d90f238f4b038bbe5b2b6001be6be,
     type: 3}
   healthPackagePrefab: {fileID: 7103041387456080322, guid: 6ed02fc913df7838fbdc9e6f58eb9162,
     type: 3}
-  numOfAmmoPacks: 3
-  numOfHealthPacks: 3
-  planeBorderPoint: 10
+  numOfAmmoPacks: 5
+  numOfHealthPacks: 5
 --- !u!4 &1652721861
 Transform:
   m_ObjectHideFlags: 0
@@ -524,7 +523,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -1.44
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1539166673243236571, guid: 8525e35cfbcc073049f8cf56c932872b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8525e35cfbcc073049f8cf56c932872b, type: 3}
 --- !u!1001 &3095731488322932990
 PrefabInstance:
