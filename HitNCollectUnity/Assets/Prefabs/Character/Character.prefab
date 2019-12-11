@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 1539166673243236574}
   - component: {fileID: 2484888349554857345}
   - component: {fileID: 6221720545298113387}
+  - component: {fileID: 4708120875387339470}
+  - component: {fileID: 4851100613450752919}
   m_Layer: 0
   m_Name: Character
   m_TagString: Character
@@ -63,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8ecbb807218ac7007b99aa6c358bcc92, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -150,7 +152,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f7d1be17b70070dab15663d04aeb4a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  environmentInfoManager: {fileID: 0}
+  fireManager: {fileID: 0}
+  movementManager: {fileID: 0}
+  statusManager: {fileID: 0}
   stateIndicator: {fileID: 1593214713783206244}
+--- !u!114 &4708120875387339470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539166673243236549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5509fab15a6b45880b1553bf6dcbe29e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4851100613450752919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539166673243236549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22dd1c6b9105b635ba1fb54569a7aca8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4116381098642940339
 PrefabInstance:
   m_ObjectHideFlags: 0

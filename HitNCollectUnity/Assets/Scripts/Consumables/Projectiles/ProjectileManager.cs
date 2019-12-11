@@ -6,45 +6,39 @@ public enum ProjectileType
     Snowball
 }
 
-
-
 public class ProjectileManager : MonoBehaviour
 {
+    Projectile projectile;
+
+    Vector3 projectileDirection;
+
     public void Init(ProjectileType type, int id, Vector3 direction)
     {
-        this.type = type;
-        this.id = id;
-        this.direction = Vector3.Normalize(direction);
-
         switch (type)
         {
             case ProjectileType.Rock:
                 projectile = new Rock();
                 break;
-
             case ProjectileType.Snowball:
                 projectile = new Snowball();
                 break;
-
             default:
                 break;
         }
 
+        projectile.Id = id;
+
+        print("direction " + direction);
+
+        projectileDirection = direction;
+
         GetComponent<MeshRenderer>().material.color = projectile.ProjectileColor;
     }
-    Projectile projectile;
-
-    ProjectileType type;
-
-    int id;
-
-    Vector3 direction = Vector3.zero;
-
     private void OnTriggerEnter(Collider collidedObject)
     {
         if (collidedObject.GetComponent<Character>())
         {
-            if (collidedObject.GetComponent<Character>().CharacterID == id)
+            if (collidedObject.GetComponent<Character>().CharacterID == projectile.Id)
             {
                 return;
             }
@@ -57,6 +51,7 @@ public class ProjectileManager : MonoBehaviour
 
     private void Update()
     {
-        transform.position = transform.position + direction * projectile.Speed * Time.deltaTime;
+        transform.position += projectile.Speed * projectileDirection*Time.deltaTime;
     }
+
 }

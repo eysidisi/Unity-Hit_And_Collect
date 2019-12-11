@@ -9,6 +9,7 @@ public enum AmmoType
 }
 public class AmmoPackage : Package
 {
+    [SerializeField]
     private AmmoType ammoType = AmmoType.Rock;
     public AmmoType CurrentAmmoType
     {
@@ -37,9 +38,13 @@ public class AmmoPackage : Package
     }
     public override int Amount => amount;
     public override PackageType TypeOfPackage => PackageType.Ammo;
-    protected override void Oncollected(StatusManager statusManager)
-    {
-        base.Oncollected(statusManager);
-    }
 
+    protected override void Oncollected(Collider characterCollider)
+    {
+        if (characterCollider.GetComponent<FireManager>())
+        {
+            characterCollider.
+            GetComponent<FireManager>().HandlePackage(this);
+        }
+    }
 }

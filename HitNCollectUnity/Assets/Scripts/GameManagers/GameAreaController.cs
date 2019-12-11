@@ -20,8 +20,6 @@ public class GameAreaController : MonoBehaviour
     private List<GameObject> ammoPackages;
     private List<GameObject> healthPackages;
 
-
-
     private void Start()
     {
         Init();

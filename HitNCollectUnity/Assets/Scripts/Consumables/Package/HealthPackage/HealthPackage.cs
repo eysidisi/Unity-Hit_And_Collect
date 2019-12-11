@@ -9,9 +9,13 @@ public class HealthPackage : Package
     public override PackageType TypeOfPackage => PackageType.Health;
 
 
-    protected override void Oncollected(StatusManager statusManager)
+    protected override void Oncollected(Collider characterCollider)
     {
-        base.Oncollected(statusManager);
+        if (characterCollider.GetComponent<StatusManager>())
+        {
+            characterCollider.GetComponent<StatusManager>().
+            HandlePackage(this);
+        }
     }
 
 }

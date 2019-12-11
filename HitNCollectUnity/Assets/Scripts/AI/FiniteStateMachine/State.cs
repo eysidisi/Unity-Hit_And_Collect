@@ -17,11 +17,11 @@ public abstract class State
         EXIT
     }
 
-    public State name;
+    public STATE name;
     protected Character character;
     protected STATE_EVENT stage;
     protected State nextState;
-    protected Color stateColor = Color.grey;
+    public abstract Color StateColor { get; }
 
     public State(Character character)
     {
@@ -31,7 +31,7 @@ public abstract class State
 
     public virtual void Enter()
     {
-        character.SetStateColor(stateColor);
+        character.SetStateColor(StateColor);
         stage = STATE_EVENT.UPDATE;
     }
 
@@ -44,7 +44,6 @@ public abstract class State
     {
         stage = STATE_EVENT.EXIT;
     }
-
     public State Process()
     {
         switch (stage)

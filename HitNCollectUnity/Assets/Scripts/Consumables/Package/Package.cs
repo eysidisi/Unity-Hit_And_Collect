@@ -11,10 +11,8 @@ public enum PackageType
 
 public abstract class Package : MonoBehaviour
 {
-    protected virtual void Oncollected(StatusManager statusManager)
-    {
-        statusManager.HandlePackage(this);
-    }
+    protected abstract void Oncollected(Collider characterCollider);
+
     // declare delegate 
     public delegate void PackageIsPicked(Package package);
 
@@ -30,7 +28,7 @@ public abstract class Package : MonoBehaviour
     {
         if (triggeredObject.tag == "Character")
         {
-            Oncollected(triggeredObject.GetComponent<StatusManager>());
+            Oncollected(triggeredObject);
 
             // Manager needs to learn about picking event first
             GameAreaController.PackageIsPicked(this);
